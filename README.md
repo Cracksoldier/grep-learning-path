@@ -2,7 +2,7 @@
 
 An interactive, self-contained learning path for the `grep` command-line tool — from beginner to expert.
 
-![screenshot](https://github.com/user-attachments/assets/placeholder)
+![screenshot](screenshot.png)
 
 ## Features
 
