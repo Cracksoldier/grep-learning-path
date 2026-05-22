@@ -1,4 +1,4 @@
-export const stages = [
+const stages = [
   {
     id: "beginner",
     title: "Beginner",

@@ -1,5 +1,3 @@
-import { stages } from './data.js';
-
 const STORAGE_KEY = 'grep-lp-progress';
 
 const RESOURCE_ICONS = {
