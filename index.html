@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>grep — Learning Path</title>
+  <meta name="description" content="An interactive learning path for the grep command-line tool, from beginner to expert.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-top">
+        <div class="header-title-group">
+          <h1 class="site-title"><span class="accent">$</span> grep</h1>
+          <p class="site-tagline">Learning Path — Beginner to Expert</p>
+        </div>
+
+        <nav class="stage-nav" aria-label="Jump to stage">
+          <a href="#beginner" class="nav-link">🌱 Beginner</a>
+          <a href="#intermediate" class="nav-link">🔧 Intermediate</a>
+          <a href="#advanced" class="nav-link">⚡ Advanced</a>
+          <a href="#expert" class="nav-link">🏆 Expert</a>
+        </nav>
+
+        <div class="header-actions">
+          <button id="import-btn" class="btn btn-secondary" title="Import saved progress from a JSON file">Import</button>
+          <button id="export-btn" class="btn btn-primary" title="Export your progress as a JSON file">Export</button>
+          <input type="file" id="import-input" accept=".json" style="display:none" aria-hidden="true">
+        </div>
+      </div>
+
+      <div class="overall-progress" role="region" aria-label="Overall progress">
+        <div class="overall-progress-label">
+          <span>Overall Progress</span>
+          <span id="overall-count">0 / 0 items completed</span>
+          <span id="overall-pct">0%</span>
+        </div>
+        <div class="progress-track overall-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <div class="progress-fill overall-fill" id="overall-bar"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div id="stages-container" class="stages-container"></div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Progress is saved automatically in your browser. Use Export / Import to carry it across devices.</p>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
