@@ -4,19 +4,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Running locally
 
-No build step. Serve with any static HTTP server (ES modules require HTTP, not `file://`):
+No build step. Open `index.html` directly in a browser, or serve it:
 
 ```bash
 python3 -m http.server 8000
-# then open http://localhost:8000
 ```
 
 ## Architecture
 
 Four files, no framework, no bundler:
 
-- **`data.js`** — single source of truth. Exports `stages`, an array of four objects (beginner → expert). Each stage has `lessons`, `resources`, and `challenges`. All content changes go here.
-- **`app.js`** — imports `stages` from `data.js`, renders the page via `innerHTML`, and handles all interactivity via event delegation on `#stages-container`. Progress state lives in a plain object `{ completedLessons: Set, completedChallenges: Set }` synced to `localStorage` (`grep-lp-progress`) on every change.
+- **`data.js`** — single source of truth. Defines `stages` as a plain global (no `export`), an array of four objects (beginner → expert). Each stage has `lessons`, `resources`, and `challenges`. All content changes go here.
+- **`app.js`** — loaded after `data.js`, uses the `stages` global, renders the page via `innerHTML`, and handles all interactivity via event delegation on `#stages-container`. Progress state lives in a plain object `{ completedLessons: Set, completedChallenges: Set }` synced to `localStorage` (`grep-lp-progress`) on every change.
 - **`style.css`** — dark terminal theme using CSS custom properties defined on `:root`. No preprocessor.
 - **`index.html`** — static shell. The `#stages-container` div is populated entirely by `app.js` at runtime.
 
